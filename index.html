@@ -1,15 +1,15 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TLauncher — CheerpJ</title>
+  <title>TLauncher - CheerpJ</title>
   <script src="https://cjrtnc.leaningtech.com/5.0/loader.js"></script>
 </head>
 <body>
-  <h1>TLauncher — CheerpJ</h1>
-  <p>Starting TLauncher. Please wait...</p>
+  <h1>TLauncher - CheerpJ</h1>
+  <p id="status">Starting Java...</p>
 
   <script type="module">
     try {
@@ -17,12 +17,17 @@
 
       cheerpjCreateDisplay(1000, 700);
 
+      document.getElementById("status").textContent =
+        "Loading TLauncher...";
+
       await cheerpjRunJar("/app/TLauncher.jar");
 
+      document.getElementById("status").textContent =
+        "TLauncher started.";
     } catch (error) {
-      console.error("TLauncher error:", error);
-      document.body.innerHTML +=
-        "<p>Error: " + error.message + "</p>";
+      document.getElementById("status").textContent =
+        "Error: " + error.message;
+      console.error(error);
     }
   </script>
 </body>
