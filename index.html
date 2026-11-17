@@ -15,12 +15,12 @@
     try {
       await cheerpjInit({
         overrideDocumentBase:
-          "https://tlauncherlauncherman1.github.io/tlauncher-browser/"
+          "https://tlauncherlauncherman1.github.io/"
       });
 
       cheerpjCreateDisplay(1000, 700);
 
-      await cheerpjRunJar("https://tlauncherlauncherman1.github.io/TLauncher.jar");
+      await cheerpjRunJar("/app/TLauncher.jar");
 
     } catch (error) {
       console.error("TLauncher error:", error);
