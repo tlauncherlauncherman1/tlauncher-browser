@@ -9,12 +9,13 @@
 </head>
 <body>
   <h1>TLauncher — CheerpJ</h1>
-  <p>Starting TLauncher. Please wait...</p>
+  <p>Starting TLauncher...</p>
 
   <script type="module">
     try {
       await cheerpjInit({
-        overrideDocumentBase: "https://tlauncherlauncherman1.github.io/tlauncher-browser/"
+        overrideDocumentBase:
+          "https://tlauncherlauncherman1.github.io/tlauncher-browser/"
       });
 
       cheerpjCreateDisplay(1000, 700);
@@ -22,11 +23,10 @@
       await cheerpjRunJar("/app/TLauncher.jar");
 
     } catch (error) {
+      console.error("TLauncher launch failed:", error);
       document.body.innerHTML +=
-        "<p>Launch error: " + error.message + "</p>";
-      console.error(error);
+        "<p>Launch failed: " + error.message + "</p>";
     }
   </script>
 </body>
 </html>
-
