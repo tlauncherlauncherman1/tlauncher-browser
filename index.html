@@ -10,7 +10,9 @@
   <h1>TLauncher — CheerpJ test</h1>
   <p>Starting the Java application. The first load may take a while.</p>
   <script type="module">
-    await cheerpjInit();
+    await cheerpjInit({
+  overrideDocumentBase: "https://tlauncherlauncherman1.github.io/tlauncher-browser/"
+});
     cheerpjCreateDisplay(1000, 700);
     await cheerpjRunJar("/app/TLauncher.jar");
   </script>
