@@ -13,7 +13,9 @@
 
   <script type="module">
     try {
-      await cheerpjInit();
+      await cheerpjInit({
+  overrideDocumentBase: "https://tlauncherlauncherman1.github.io/tlauncher-browser/"
+});
       cheerpjCreateDisplay(1000, 700);
 
       document.getElementById("status").textContent =
