@@ -4,29 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TLauncher — CheerpJ</title>
+  <title>TLauncher — CheerpJ test</title>
   <script src="https://cjrtnc.leaningtech.com/5.0/loader.js"></script>
 </head>
 <body>
-  <h1>TLauncher — CheerpJ</h1>
-  <p>Starting TLauncher...</p>
-
+  <h1>TLauncher — CheerpJ test</h1>
+  <p>Starting the Java application. The first load may take a while.</p>
   <script type="module">
-    try {
-      await cheerpjInit({
-        overrideDocumentBase:
-          "https://tlauncherlauncherman1.github.io/"
-      });
-
-      cheerpjCreateDisplay(1000, 700);
-
-      await cheerpjRunJar("/app/TLauncher.jar");
-
-    } catch (error) {
-      console.error("TLauncher error:", error);
-      document.body.innerHTML +=
-        "<p>Launch error: " + error.message + "</p>";
-    }
+    await cheerpjInit();
+    cheerpjCreateDisplay(1000, 700);
+    await cheerpjRunJar("/app/TLauncher.jar");
   </script>
 </body>
 </html>
