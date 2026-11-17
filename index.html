@@ -12,23 +12,27 @@
   <p id="status">Starting TLauncher...</p>
 
   <script type="module">
+    const status = document.getElementById("status");
+
     try {
+      status.textContent = "Initializing CheerpJ...";
+
       await cheerpjInit({
-  overrideDocumentBase: "https://tlauncherlauncherman1.github.io/tlauncher-browser/"
-});
+        overrideDocumentBase:
+          "https://tlauncherlauncherman1.github.io/tlauncher-browser/"
+      });
+
       cheerpjCreateDisplay(1000, 700);
 
-      document.getElementById("status").textContent =
-        "Loading TLauncher...";
+      status.textContent = "Loading TLauncher...";
 
       await cheerpjRunJar("/app/TLauncher.jar");
 
-      document.getElementById("status").textContent =
-        "TLauncher started.";
+      status.textContent = "TLauncher started.";
     } catch (error) {
       console.error("TLauncher error:", error);
-      document.getElementById("status").textContent =
-        "Launch error: " + error.message;
+      status.textContent =
+        "Launch error: " + (error?.message || String(error));
     }
   </script>
 </body>
