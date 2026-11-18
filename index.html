@@ -1,10 +1,12 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TLauncher — CheerpJ</title>
+
+  <base href="https://tlauncherlauncherman1.github.io/tlauncher-browser/">
+
   <script src="https://cjrtnc.leaningtech.com/5.0/loader.js"></script>
 </head>
 <body>
@@ -14,12 +16,19 @@
   <script type="module">
     const status = document.getElementById("status");
 
+    const BASE_URL = "https://tlauncherlauncherman1.github.io/tlauncher-browser/";
+
     try {
+      // Force the page to use the correct GitHub Pages URL
+      if (window.location.href !== BASE_URL &&
+          window.location.pathname !== "/tlauncher-browser/") {
+        window.location.replace(BASE_URL);
+      }
+
       status.textContent = "Initializing CheerpJ...";
 
       await cheerpjInit({
-        overrideDocumentBase:
-          "https://tlauncherlauncherman1.github.io/tlauncher-browser/"
+        overrideDocumentBase: BASE_URL
       });
 
       cheerpjCreateDisplay(1000, 700);
